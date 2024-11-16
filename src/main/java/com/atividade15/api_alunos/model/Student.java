@@ -1,5 +1,6 @@
 package com.atividade15.api_alunos.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -29,7 +30,6 @@ public class Student {
             name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id"))
-    @JsonManagedReference
     private Set<Course> courses = new HashSet<>();
 
 }

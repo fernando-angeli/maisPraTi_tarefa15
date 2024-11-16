@@ -1,16 +1,16 @@
 package com.atividade15.api_alunos.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CourseResponseDto {
 
     private Long id;
     private String name;
     private String description;
-    private List<StudentResponseDto> students = new ArrayList<>();
 
 }
