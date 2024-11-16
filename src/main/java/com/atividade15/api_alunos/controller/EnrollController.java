@@ -33,22 +33,22 @@ public class EnrollController {
         return ResponseEntity.ok().body(response);
     }
 
-    @GetMapping(value = "/curso/{id}")
+    @GetMapping(value = "/cursos/{id}/alunos")
     public ResponseEntity<List<StudentResponseDto>> listCourseStudents(@PathVariable Long id){
         return ResponseEntity.ok().body(enrollService.listCourseStudents(id));
     }
 
-    @GetMapping(value = "/curso")
+    @GetMapping(value = "/cursos/search")
     public ResponseEntity<CourseResponseDto> findCourseByName(@RequestParam String name){
         return ResponseEntity.ok().body(enrollService.findCourseByName(name));
     }
 
-    @GetMapping(value = "/aluno/{id}")
+    @GetMapping(value = "/alunos/{id}/cursos")
     public ResponseEntity<List<CourseResponseDto>> listStudentCourses(@PathVariable Long id){
         return ResponseEntity.ok().body(enrollService.listStudentCourses(id));
     }
 
-    @GetMapping(value = "/aluno")
+    @GetMapping(value = "/alunos/search")
     public ResponseEntity<StudentResponseDto> findStudentByEmail(@RequestParam String email){
         return ResponseEntity.ok().body(enrollService.findStudentByEmail(email));
     }
