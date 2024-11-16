@@ -42,13 +42,6 @@ src/
 │   │   │   │   │   │   ├── CursoController.java  # Endpoints relacionados a Cursos
 │   └── resources/
 │       ├── application.properties  # Configurações da aplicação
-└── test/
-    └── java/
-        └── com/
-            └── maisprati/
-                └── tarefa15/
-                    ├── AlunoServiceTest.java  # Testes unitários para Aluno
-                    ├── CursoServiceTest.java  # Testes unitários para Curso
 ```
 
 ## 🛠️ Funcionalidades Implementadas
@@ -93,18 +86,18 @@ src/
 ## 🧪 Endpoints Disponíveis
 
 ### Alunos
-- **POST /alunos:** Criar um novo aluno.
-- **GET /alunos/{id}/cursos:** Listar os cursos de um aluno.
-- **POST /alunos/{id}/cursos/{cursoId}:** Matricular aluno em um curso.
-- **DELETE /alunos/{id}/cursos/{cursoId}:** Remover matrícula de um curso.
+- **POST /api/alunos:** Criar um novo aluno.
+- **GET /api/alunos/{id}/cursos:** Listar os cursos de um aluno.
+- **POST /api/alunos/{id}/cursos/{cursoId}:** Matricular aluno em um curso.
+- **DELETE /api/alunos/{id}/cursos/{cursoId}:** Remover matrícula de um curso.
 
 ### Cursos
-- **POST /cursos:** Criar um novo curso.
-- **GET /cursos/{id}/alunos:** Listar os alunos de um curso.
+- **POST /api/cursos:** Criar um novo curso.
+- **GET /api/cursos/{id}/alunos:** Listar os alunos de um curso.
 
 ### Consultas Adicionais (Opcional)
-- **GET /alunos/search?email={email}:** Buscar alunos por e-mail.
-- **GET /cursos/search?nome={nome}:** Buscar cursos por nome.
+- **GET /api/alunos/search?email={email}:** Buscar alunos por e-mail.
+- **GET /api/cursos/search?nome={nome}:** Buscar cursos por nome.
 
 ## 🧪 Testes
 
