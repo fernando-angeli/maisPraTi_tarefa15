@@ -99,13 +99,6 @@ src/
 - **GET /api/alunos/search?email={email}:** Buscar alunos por e-mail.
 - **GET /api/cursos/search?nome={nome}:** Buscar cursos por nome.
 
-## 🧪 Testes
-
-Para executar os testes:
-```bash
-mvn test
-```
-
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir **issues** ou enviar **pull requests**.
