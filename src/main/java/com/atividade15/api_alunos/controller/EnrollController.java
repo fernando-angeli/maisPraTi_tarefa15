@@ -38,9 +38,19 @@ public class EnrollController {
         return ResponseEntity.ok().body(enrollService.listCourseStudents(id));
     }
 
+    @GetMapping(value = "/curso")
+    public ResponseEntity<CourseResponseDto> findCourseByName(@RequestParam String name){
+        return ResponseEntity.ok().body(enrollService.findCourseByName(name));
+    }
+
     @GetMapping(value = "/aluno/{id}")
     public ResponseEntity<List<CourseResponseDto>> listStudentCourses(@PathVariable Long id){
         return ResponseEntity.ok().body(enrollService.listStudentCourses(id));
+    }
+
+    @GetMapping(value = "/aluno")
+    public ResponseEntity<StudentResponseDto> findStudentByEmail(@RequestParam String email){
+        return ResponseEntity.ok().body(enrollService.findStudentByEmail(email));
     }
 
     @DeleteMapping(value = "/alunos/{id}/cursos/{cursoId}")

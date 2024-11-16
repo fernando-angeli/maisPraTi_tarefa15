@@ -75,15 +75,6 @@ public class EnrollService {
         return convertToDto(studentUpdated, StudentResponseDto.class);
     }
 
-    public void delete(Long id){
-        try{
-            getStudentById(id);
-            studentRepository.deleteById(id);
-        } catch (ResourceNotFoundException e){
-            throw new ResourceNotFoundException("Aluno de id " + id + " não localizado.");
-        }
-    }
-
     public Student getStudentById(Long id){
         return studentRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Aluno de id " + id + " não localizado."));
@@ -118,6 +109,18 @@ public class EnrollService {
         Course course = getCourseById(cursoId);
         student.getCourses().remove(course);
         studentRepository.save(student);
+    }
+
+    public CourseResponseDto findCourseByName(String name) {
+        Course course = courseRepository.findByName(name)
+            .orElseThrow(() -> new ResourceNotFoundException("Curso não localizado."));
+        return convertToDto(course, CourseResponseDto.class);
+    }
+
+    public StudentResponseDto findStudentByEmail(String email) {
+        Student student = studentRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("Estudante não localizado."));
+        return convertToDto(student, StudentResponseDto.class);
     }
 
 }
